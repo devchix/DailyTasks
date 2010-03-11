@@ -23,3 +23,882 @@ Migrating to CreateTasks (20100311054749)
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
   [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("tasks")[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2010-03-10 22:23:10) [GET]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 16ms (View: 2, DB: 1) | 200 OK [http://localhost/rails/info/properties]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:24:54) [GET]
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+ERROR: compiling _run_erb_app47views47tasks47list46html46erb RAISED compile error
+/Users/becca/Documents/Rails/devchix/DailyTasks/app/views/tasks/list.html.erb:6: syntax error, unexpected kENSURE, expecting kEND
+/Users/becca/Documents/Rails/devchix/DailyTasks/app/views/tasks/list.html.erb:8: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_erb_app47views47tasks47list46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>All Tasks</h1>\n"
+;  for task in @tasks ; @output_buffer.concat "\n<tr>\n\t<td>"
+
+; @output_buffer.concat((h task.name ).to_s); @output_buffer.concat "</td>\n</tr>"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/becca/Documents/Rails/devchix/DailyTasks/app/views/tasks/list.html.erb:8:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/becca/Documents/Rails/devchix/DailyTasks/app/controllers/tasks_controller.rb:5:in `list'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/becca/Documents/Rails/devchix/DailyTasks/app/views/tasks/list.html.erb:6: syntax error, unexpected kENSURE, expecting kEND
+/Users/becca/Documents/Rails/devchix/DailyTasks/app/views/tasks/list.html.erb:8: syntax error, unexpected $end, expecting kEND) on line #6 of app/views/tasks/list.html.erb:
+3: <tr>
+4: 	<td><%=h task.name %></td>
+5: </tr>
+
+    app/views/tasks/list.html.erb:8:in `compile!'
+    app/controllers/tasks_controller.rb:5:in `list'
+
+Rendered rescues/_trace (102.9ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:26:43) [GET]
+  [4;35;1mTask Load (0.4ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mTask Create (0.5ms)[0m   [0;1mINSERT INTO "tasks" ("name", "created_at", "updated_at", "deleted", "description") VALUES('Task One', '2010-03-11 06:27:38', '2010-03-11 06:27:38', NULL, NULL)[0m
+  [4;35;1mTask Create (0.4ms)[0m   [0mINSERT INTO "tasks" ("name", "created_at", "updated_at", "deleted", "description") VALUES('Task Two', '2010-03-11 06:27:52', '2010-03-11 06:27:52', NULL, NULL)[0m
+  [4;36;1mTask Create (0.7ms)[0m   [0;1mINSERT INTO "tasks" ("name", "created_at", "updated_at", "deleted", "description") VALUES('Task Three', '2010-03-11 06:28:11', '2010-03-11 06:28:11', NULL, NULL)[0m
+  [4;35;1mTask Load (0.4ms)[0m   [0mSELECT * FROM "tasks" [0m
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:28:27) [GET]
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:36:47) [GET]
+  [4;35;1mTask Load (0.7ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+
+ActionView::TemplateError (undefined local variable or method `add_task_path' for #<ActionView::Base:0x1043816e8>) on line #10 of app/views/tasks/list.html.erb:
+7: <% end %>
+8: </table>
+9: 
+10: <%= link_to 'New task', add_task_path %>
+
+    app/views/tasks/list.html.erb:10
+    app/controllers/tasks_controller.rb:5:in `list'
+
+Rendered rescues/_trace (44.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:37:12) [GET]
+  [4;36;1mTask Load (0.6ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+
+ActionView::TemplateError (undefined local variable or method `new_task_path' for #<ActionView::Base:0x1044b9b78>) on line #10 of app/views/tasks/list.html.erb:
+7: <% end %>
+8: </table>
+9: 
+10: <%= link_to 'New task', new_task_path %>
+
+    app/views/tasks/list.html.erb:10
+    app/controllers/tasks_controller.rb:5:in `list'
+
+Rendered rescues/_trace (43.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:38:14) [GET]
+  [4;35;1mTask Load (0.6ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+
+ActionView::TemplateError (undefined local variable or method `add_tasks_path' for #<ActionView::Base:0x10422c0e0>) on line #10 of app/views/tasks/list.html.erb:
+7: <% end %>
+8: </table>
+9: 
+10: <%= link_to 'New task', add_tasks_path %>
+
+    app/views/tasks/list.html.erb:10
+    app/controllers/tasks_controller.rb:5:in `list'
+
+Rendered rescues/_trace (107.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:38:32) [GET]
+  [4;36;1mTask Load (0.6ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-03-10 22:38:46) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: add, details, edit, and list):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:38:52) [GET]
+  [4;35;1mTask Load (0.6ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 9ms (View: 2, DB: 1) | 200 OK [http://localhost/tasks/list]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 22:38:57) [GET]
+Rendering tasks/add
+
+ActionView::TemplateError (undefined method `tasks_path' for #<ActionView::Base:0x10424aea0>) on line #2 of app/views/tasks/add.html.erb:
+1: <h1>Add a Task</h1>
+2: <% form_for(@task) do |t| %>
+3: 	<%= t.error_messages %>
+4: 	<p>
+5: 		<%= t.label :name %><br>
+
+    app/views/tasks/add.html.erb:2
+    app/controllers/tasks_controller.rb:14:in `add'
+
+Rendered rescues/_trace (110.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 22:39:19) [GET]
+Rendering tasks/add
+
+ActionView::TemplateError (undefined method `tasks_path' for #<ActionView::Base:0x1043a8e50>) on line #2 of app/views/tasks/add.html.erb:
+1: <h1>Add a Task</h1>
+2: <% form_for(@task) do |t| %>
+3: 	<%= t.error_messages %>
+4: 	<p>
+5: 		<%= t.label :name %><br>
+
+    app/views/tasks/add.html.erb:2
+    app/controllers/tasks_controller.rb:14:in `add'
+
+Rendered rescues/_trace (44.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 22:39:21) [GET]
+Rendering tasks/add
+
+ActionView::TemplateError (undefined method `tasks_path' for #<ActionView::Base:0x1044ef4a8>) on line #2 of app/views/tasks/add.html.erb:
+1: <h1>Add a Task</h1>
+2: <% form_for(@task) do |t| %>
+3: 	<%= t.error_messages %>
+4: 	<p>
+5: 		<%= t.label :name %><br>
+
+    app/views/tasks/add.html.erb:2
+    app/controllers/tasks_controller.rb:14:in `add'
+
+Rendered rescues/_trace (44.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 22:39:27) [GET]
+Rendering tasks/add
+
+ActionView::TemplateError (undefined method `tasks_path' for #<ActionView::Base:0x1042663f8>) on line #2 of app/views/tasks/add.html.erb:
+1: <h1>Add a Task</h1>
+2: <% form_for(@task) do |t| %>
+3: 	<%= t.error_messages %>
+4: 	<p>
+5: 		<%= t.label :name %><br>
+
+    app/views/tasks/add.html.erb:2
+    app/controllers/tasks_controller.rb:14:in `add'
+
+Rendered rescues/_trace (112.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 22:40:05) [GET]
+Rendering tasks/add
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 22:40:20) [GET]
+Rendering tasks/add
+
+ActionView::TemplateError (undefined method `tasks_path' for #<ActionView::Base:0x104371338>) on line #2 of app/views/tasks/add.html.erb:
+1: <h1>Add a Task</h1>
+2: <% form_for(@task) do |t| %>
+3: 
+4: <% end %>
+
+    app/views/tasks/add.html.erb:2
+    app/controllers/tasks_controller.rb:14:in `add'
+
+Rendered rescues/_trace (111.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 22:40:34) [GET]
+Rendering tasks/add
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #2 of app/views/tasks/add.html.erb:
+1: <h1>Add a Task</h1>
+2: <% form_for(@tasks) do |t| %>
+3: 
+4: <% end %>
+
+    app/views/tasks/add.html.erb:2
+    app/controllers/tasks_controller.rb:14:in `add'
+
+Rendered rescues/_trace (44.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:41:02) [GET]
+  [4;36;1mTask Load (0.6ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+
+ActionView::TemplateError (undefined local variable or method `add_task_path' for #<ActionView::Base:0x104224c00>) on line #10 of app/views/tasks/list.html.erb:
+7: <% end %>
+8: </table>
+9: 
+10: <%= link_to 'New task', add_task_path %>
+
+    app/views/tasks/list.html.erb:10
+    app/controllers/tasks_controller.rb:5:in `list'
+
+Rendered rescues/_trace (121.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:41:28) [GET]
+  [4;35;1mTask Load (0.6ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+
+ActionView::TemplateError (undefined local variable or method `tasks_add_path' for #<ActionView::Base:0x10439e108>) on line #10 of app/views/tasks/list.html.erb:
+7: <% end %>
+8: </table>
+9: 
+10: <%= link_to 'New task', tasks_add_path %>
+
+    app/views/tasks/list.html.erb:10
+    app/controllers/tasks_controller.rb:5:in `list'
+
+Rendered rescues/_trace (41.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:43:13) [GET]
+  [4;36;1mTask Load (0.6ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+
+ActionView::TemplateError (undefined local variable or method `task_add_path' for #<ActionView::Base:0x104113bb8>) on line #10 of app/views/tasks/list.html.erb:
+7: <% end %>
+8: </table>
+9: 
+10: <%= link_to 'New task', task_add_path %>
+
+    app/views/tasks/list.html.erb:10
+    app/controllers/tasks_controller.rb:5:in `list'
+
+Rendered rescues/_trace (41.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:46:10) [GET]
+  [4;35;1mTask Load (0.6ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+
+ActionView::TemplateError (undefined local variable or method `add_task_path' for #<ActionView::Base:0x10427c248>) on line #10 of app/views/tasks/list.html.erb:
+7: <% end %>
+8: </table>
+9: 
+10: <%= link_to 'New post', add_task_path %>
+
+    app/views/tasks/list.html.erb:10
+    app/controllers/tasks_controller.rb:5:in `list'
+
+Rendered rescues/_trace (109.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:51:28) [GET]
+  [4;36;1mTask Load (0.6ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+
+ActionView::TemplateError (undefined local variable or method `tasks_path' for #<ActionView::Base:0x1043eea90>) on line #10 of app/views/tasks/list.html.erb:
+7: <% end %>
+8: </table>
+9: 
+10: <%= link_to 'New post', tasks_path %>
+
+    app/views/tasks/list.html.erb:10
+    app/controllers/tasks_controller.rb:5:in `list'
+
+Rendered rescues/_trace (41.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:51:35) [GET]
+  [4;35;1mTask Load (0.6ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+
+ActionView::TemplateError (undefined local variable or method `tasks_path' for #<ActionView::Base:0x104164590>) on line #10 of app/views/tasks/list.html.erb:
+7: <% end %>
+8: </table>
+9: 
+10: <%= link_to 'New post', tasks_path %>
+
+    app/views/tasks/list.html.erb:10
+    app/controllers/tasks_controller.rb:5:in `list'
+
+Rendered rescues/_trace (41.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:52:22) [GET]
+  [4;36;1mTask Load (0.6ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+
+ActionView::TemplateError (undefined local variable or method `tasks_list_path' for #<ActionView::Base:0x1042cf830>) on line #10 of app/views/tasks/list.html.erb:
+7: <% end %>
+8: </table>
+9: 
+10: <%= link_to 'New post', tasks_list_path %>
+
+    app/views/tasks/list.html.erb:10
+    app/controllers/tasks_controller.rb:5:in `list'
+
+Rendered rescues/_trace (108.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:52:26) [GET]
+  [4;35;1mTask Load (0.7ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+
+ActionView::TemplateError (undefined local variable or method `tasks_list_path' for #<ActionView::Base:0x104464970>) on line #10 of app/views/tasks/list.html.erb:
+7: <% end %>
+8: </table>
+9: 
+10: <%= link_to 'New post', tasks_list_path %>
+
+    app/views/tasks/list.html.erb:10
+    app/controllers/tasks_controller.rb:5:in `list'
+
+Rendered rescues/_trace (41.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:52:35) [GET]
+  [4;36;1mTask Load (0.6ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+
+ActionView::TemplateError (undefined local variable or method `list_tasks_path' for #<ActionView::Base:0x1041ecf58>) on line #10 of app/views/tasks/list.html.erb:
+7: <% end %>
+8: </table>
+9: 
+10: <%= link_to 'New post', list_tasks_path %>
+
+    app/views/tasks/list.html.erb:10
+    app/controllers/tasks_controller.rb:5:in `list'
+
+Rendered rescues/_trace (108.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:54:17) [GET]
+  [4;35;1mTask Load (0.6ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 18ms (View: 14, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 22:54:19) [GET]
+Rendering tasks/add
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:54:36) [GET]
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:56:59) [GET]
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+
+ActionView::TemplateError (undefined local variable or method `tasks_add_path' for #<ActionView::Base:0x1041cbd80>) on line #13 of app/views/tasks/list.html.erb:
+10: <%= link_to "New Task", :controller => "tasks", :action => "add" %>
+11: 
+12: 
+13: <%= link_to "Add Task", tasks_add_path %>
+
+    app/views/tasks/list.html.erb:13
+    app/controllers/tasks_controller.rb:5:in `list'
+
+Rendered rescues/_trace (41.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:57:13) [GET]
+  [4;36;1mTask Load (0.6ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 22:57:28) [GET]
+  [4;35;1mTask Load (0.6ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 22:58:02) [GET]
+Rendering tasks/add
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 22:58:50) [GET]
+Rendering tasks/add
+
+ActionView::TemplateError (undefined method `tasks_path' for #<ActionView::Base:0x104168c58>) on line #3 of app/views/tasks/add.html.erb:
+1: <h1>Add a Task</h1>
+2: 
+3: <% form_for(@task) do |f| %>
+4: <% end %>
+
+    app/views/tasks/add.html.erb:3
+    app/controllers/tasks_controller.rb:14:in `add'
+
+Rendered rescues/_trace (44.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:00:09) [GET]
+Rendering tasks/add
+
+ActionView::TemplateError (undefined method `tasks_path' for #<ActionView::Base:0x1042b3f18>) on line #3 of app/views/tasks/add.html.erb:
+1: <h1>Add a Task</h1>
+2: 
+3: <% form_for(@task) do |f| %>
+4: 
+5: <% end %>
+6: 
+
+    app/views/tasks/add.html.erb:3
+    app/controllers/tasks_controller.rb:14:in `add'
+
+Rendered rescues/_trace (111.7ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:00:17) [GET]
+Rendering tasks/add
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 23:00:20) [GET]
+  [4;36;1mTask Load (0.6ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:00:21) [GET]
+Rendering tasks/add
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:01:54) [GET]
+Rendering tasks/add
+
+ActionView::TemplateError (undefined method `tasks_path' for #<ActionView::Base:0x1043057a0>) on line #3 of app/views/tasks/add.html.erb:
+1: <h1>Add a Task</h1>
+2: 
+3: <% form_for(@task) do |f| %>
+4:   <%= f.error_messages %>
+5: <% end %>
+6: <%= link_to "Back", :controller => "tasks", :action => "list" %>
+
+    app/views/tasks/add.html.erb:3
+    app/controllers/tasks_controller.rb:14:in `add'
+
+Rendered rescues/_trace (109.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:03:27) [GET]
+Rendering tasks/add
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:11:46) [GET]
+Rendering tasks/add
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:12:21) [GET]
+Rendering tasks/add
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:12:48) [GET]
+Rendering tasks/add
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:13:06) [GET]
+Rendering tasks/add
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:13:52) [GET]
+Rendering tasks/add
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:16:27) [GET]
+Rendering tasks/add
+Completed in 76ms (View: 72, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:16:29) [POST]
+  Parameters: {"commit"=>"Add", "authenticity_token"=>"b+wvE2KWU5FwuvzWsffqNSiPyueszG0wwDqCcdw/JOw=", "task"=>{"name"=>"Added from the GUI", "description"=>"Do this right now"}}
+Rendering tasks/add
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 23:16:31) [GET]
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:16:33) [GET]
+Rendering tasks/add
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:23:08) [GET]
+Rendering tasks/add
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:23:15) [POST]
+  Parameters: {"commit"=>"Add", "authenticity_token"=>"b+wvE2KWU5FwuvzWsffqNSiPyueszG0wwDqCcdw/JOw=", "task"=>{"name"=>"Add this", "description"=>"Test it"}}
+Rendering tasks/add
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 23:23:17) [GET]
+  [4;36;1mTask Load (0.6ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 23:23:45) [GET]
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:23:47) [GET]
+  [4;36;1mTask Create (0.4ms)[0m   [0;1mINSERT INTO "tasks" ("name", "created_at", "updated_at", "deleted", "description") VALUES(NULL, '2010-03-11 07:23:47', '2010-03-11 07:23:47', NULL, NULL)[0m
+
+NoMethodError (undefined method `task_url' for #<TasksController:0x1041847a0>):
+  app/controllers/tasks_controller.rb:25:in `add'
+  app/controllers/tasks_controller.rb:22:in `add'
+
+Rendered rescues/_trace (102.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:29:50) [GET]
+  [4;35;1mTask Create (0.3ms)[0m   [0mINSERT INTO "tasks" ("name", "created_at", "updated_at", "deleted", "description") VALUES(NULL, '2010-03-11 07:29:50', '2010-03-11 07:29:50', NULL, NULL)[0m
+Rendering tasks/add
+Completed in 12ms (View: 3, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:29:51) [POST]
+  Parameters: {"commit"=>"Add", "authenticity_token"=>"b+wvE2KWU5FwuvzWsffqNSiPyueszG0wwDqCcdw/JOw=", "task"=>{"name"=>"", "description"=>""}}
+  [4;36;1mTask Create (0.4ms)[0m   [0;1mINSERT INTO "tasks" ("name", "created_at", "updated_at", "deleted", "description") VALUES(NULL, '2010-03-11 07:29:51', '2010-03-11 07:29:51', NULL, NULL)[0m
+Rendering tasks/add
+Completed in 12ms (View: 3, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 23:30:03) [GET]
+  [4;35;1mTask Load (0.7ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 23:30:23) [GET]
+  [4;36;1mTask Load (0.8ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:30:27) [GET]
+  [4;35;1mTask Create (0.4ms)[0m   [0mINSERT INTO "tasks" ("name", "created_at", "updated_at", "deleted", "description") VALUES(NULL, '2010-03-11 07:30:27', '2010-03-11 07:30:27', NULL, NULL)[0m
+Rendering tasks/add
+Completed in 12ms (View: 3, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:30:28) [POST]
+  Parameters: {"commit"=>"Add", "authenticity_token"=>"b+wvE2KWU5FwuvzWsffqNSiPyueszG0wwDqCcdw/JOw=", "task"=>{"name"=>"", "description"=>""}}
+  [4;36;1mTask Create (0.4ms)[0m   [0;1mINSERT INTO "tasks" ("name", "created_at", "updated_at", "deleted", "description") VALUES(NULL, '2010-03-11 07:30:28', '2010-03-11 07:30:28', NULL, NULL)[0m
+Rendering tasks/add
+Completed in 12ms (View: 3, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 23:30:30) [GET]
+  [4;35;1mTask Load (0.8ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:31:37) [GET]
+  [4;36;1mTask Create (0.6ms)[0m   [0;1mINSERT INTO "tasks" ("name", "created_at", "updated_at", "deleted", "description") VALUES('HC Task', '2010-03-11 07:31:37', '2010-03-11 07:31:37', NULL, 'blah blah')[0m
+Rendering tasks/add
+Completed in 12ms (View: 3, DB: 1) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:31:38) [POST]
+  Parameters: {"commit"=>"Add", "authenticity_token"=>"b+wvE2KWU5FwuvzWsffqNSiPyueszG0wwDqCcdw/JOw=", "task"=>{"name"=>"HC Task", "description"=>"blah blah"}}
+  [4;35;1mTask Create (0.4ms)[0m   [0mINSERT INTO "tasks" ("name", "created_at", "updated_at", "deleted", "description") VALUES('HC Task', '2010-03-11 07:31:38', '2010-03-11 07:31:38', NULL, 'blah blah')[0m
+Rendering tasks/add
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 23:31:45) [GET]
+  [4;36;1mTask Load (1.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:32:32) [GET]
+Rendering tasks/add
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:32:32) [GET]
+Rendering tasks/add
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:32:34) [POST]
+  Parameters: {"commit"=>"Add", "authenticity_token"=>"b+wvE2KWU5FwuvzWsffqNSiPyueszG0wwDqCcdw/JOw=", "task"=>{"name"=>"", "description"=>""}}
+Rendering tasks/add
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 23:32:35) [GET]
+  [4;35;1mTask Load (0.9ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:33:12) [GET]
+Rendering tasks/add
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 23:33:19) [GET]
+  [4;36;1mTask Load (0.9ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:33:21) [GET]
+Rendering tasks/add
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:34:20) [POST]
+  Parameters: {"commit"=>"Add", "authenticity_token"=>"b+wvE2KWU5FwuvzWsffqNSiPyueszG0wwDqCcdw/JOw=", "task"=>{"name"=>"Hello World", "description"=>"Hello Universe"}}
+Rendering tasks/add
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 23:34:22) [GET]
+  [4;35;1mTask Load (0.9ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:34:55) [GET]
+Rendering tasks/add
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:35:03) [POST]
+  Parameters: {"commit"=>"Add", "authenticity_token"=>"b+wvE2KWU5FwuvzWsffqNSiPyueszG0wwDqCcdw/JOw=", "task"=>{"name"=>"Hello WOrld", "description"=>"Hello Universe"}}
+Rendering tasks/add
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 23:35:05) [GET]
+  [4;36;1mTask Load (1.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:35:37) [GET]
+Rendering tasks/add
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:35:42) [POST]
+  Parameters: {"commit"=>"Add", "authenticity_token"=>"b+wvE2KWU5FwuvzWsffqNSiPyueszG0wwDqCcdw/JOw=", "task"=>{"name"=>"One", "description"=>"Two"}}
+Rendering tasks/add
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 23:35:44) [GET]
+  [4;35;1mTask Load (0.9ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:36:22) [GET]
+  [4;36;1mTask Create (0.3ms)[0m   [0;1mINSERT INTO "tasks" ("name", "created_at", "updated_at", "deleted", "description") VALUES(NULL, '2010-03-11 07:36:22', '2010-03-11 07:36:22', NULL, NULL)[0m
+Rendering tasks/add
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:36:26) [POST]
+  Parameters: {"commit"=>"Add", "authenticity_token"=>"b+wvE2KWU5FwuvzWsffqNSiPyueszG0wwDqCcdw/JOw=", "task"=>{"name"=>"hi", "description"=>"bye"}}
+  [4;35;1mTask Create (0.4ms)[0m   [0mINSERT INTO "tasks" ("name", "created_at", "updated_at", "deleted", "description") VALUES('hi', '2010-03-11 07:36:26', '2010-03-11 07:36:26', NULL, 'bye')[0m
+Rendering tasks/add
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 23:36:34) [GET]
+  [4;36;1mTask Load (1.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:36:43) [GET]
+  [4;35;1mTask Create (0.5ms)[0m   [0mINSERT INTO "tasks" ("name", "created_at", "updated_at", "deleted", "description") VALUES(NULL, '2010-03-11 07:36:43', '2010-03-11 07:36:43', NULL, NULL)[0m
+Rendering tasks/add
+Completed in 13ms (View: 3, DB: 1) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#add (for 127.0.0.1 at 2010-03-10 23:36:51) [POST]
+  Parameters: {"commit"=>"Add", "authenticity_token"=>"b+wvE2KWU5FwuvzWsffqNSiPyueszG0wwDqCcdw/JOw=", "task"=>{"name"=>"Blah blah", "description"=>"Hello Universe"}}
+  [4;36;1mTask Create (0.3ms)[0m   [0;1mINSERT INTO "tasks" ("name", "created_at", "updated_at", "deleted", "description") VALUES('Blah blah', '2010-03-11 07:36:51', '2010-03-11 07:36:51', NULL, 'Hello Universe')[0m
+Rendering tasks/add
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/tasks/add]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-10 23:36:53) [GET]
+  [4;35;1mTask Load (1.2ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://localhost/]
