@@ -1,0 +1,11 @@
+<h1>Add a Task</h1>
+
+<% form_for :task do |t| %>
+  <%= t.error_messages %>
+<%= t.label :name %>
+<%= t.text_field :name %><br>
+<%= t.label :description %>
+<%= t.text_field :description %>
+ <%= t.submit 'Add' %>
+<% end %>
+<%= link_to "Back", :controller => "tasks", :action => "list" %>
