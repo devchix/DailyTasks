@@ -1,0 +1,15 @@
+/config/database.yml
+/coverage
+/db/*.sqlite3
+/db/schema.rb
+/doc/api
+/doc/app
+/doc/plugins
+/public/system
+.DS_Store
+*~
+.*.sw?
+log/*.log
+tmp/**/*
+Capfile
+features_report.html
