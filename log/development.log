@@ -902,3 +902,53 @@ Processing TasksController#list (for 127.0.0.1 at 2010-03-10 23:36:53) [GET]
   [4;35;1mTask Load (1.2ms)[0m   [0mSELECT * FROM "tasks" [0m
 Rendering tasks/list
 Completed in 8ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-11 07:37:52) [GET]
+  [4;36;1mTask Load (2.5ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 11ms (View: 3, DB: 3) | 200 OK [http://localhost/tasks/list]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-14 11:15:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+
+ActionView::MissingTemplate (Missing template home/index.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#list (for 127.0.0.1 at 2010-03-14 11:15:39) [GET]
+  Parameters: {"action"=>"list", "controller"=>"tasks"}
+  [4;35;1mTask Load (1.2ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/list
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/tasks/list]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-03-14 12:02:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mTask Load (1.3ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/index
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://localhost/tasks/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-03-14 12:02:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mTask Load (1.2ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/index
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/tasks/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-03-14 12:03:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mTask Load (1.2ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering tasks/index
+Completed in 69ms (View: 3, DB: 1) | 200 OK [http://localhost/tasks/]
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-03-14 12:03:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mTask Load (1.1ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering tasks/index
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/tasks/]

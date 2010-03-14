@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  def list
+  def index
     @tasks = Task.all
     
      respond_to do |format|
