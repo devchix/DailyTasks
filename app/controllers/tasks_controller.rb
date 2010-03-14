@@ -9,28 +9,21 @@ class TasksController < ApplicationController
       
   end
 
+  def new
+    @task = Task.new
+  end
 
+  def create
+    @task = Task.new(params[:task])
+    if @task.save
+      flash[:notice] = 'Task was successfully created.'
+      redirect_to tasks_url
+    else
+     #error saving
+    end
+  end
 
   def edit
   end
-
-  def details
-  end
-  
- 
-   def add
-      @task = Task.new(params[:task])
-      respond_to do |format|
-        if @task.save
-          flash[:notice] = 'Task was successfully created.'
-          format.html 
-          format.xml  { render :xml => @task}
-        else
-          format.html 
-          format.xml  { render :xml => @task.errors, :status => :unprocessable_entity }
-        end
-      end
-    end
- 
 
 end
