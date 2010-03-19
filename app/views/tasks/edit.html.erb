@@ -1,2 +1,17 @@
-<h1>Tasks#edit</h1>
-<p>Find me in app/views/tasks/edit.html.erb</p>
+<h1>Editing Task </h1>
+
+<% form_for(@task)  do |f| %>
+	<%= f.error_messages %>
+	
+	<p>
+		<%= f.label :name %><br/>
+		<%= f.text_field :name %><br/>
+		<%= f.label :description %><br/>
+		<%= f.text_field :description %><br/>
+	</p>
+	
+	<%= f.submit 'Update' %>
+	<% end %>
+	
+	<%= link_to 'Show', @task %> |
+	<%= link_to 'Index', tasks_path %>
