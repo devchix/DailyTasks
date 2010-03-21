@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html;charset=utf-8'}
+    %meta{'http-equiv' => 'Content-Script-Type', :content => 'text/javascript'}
+    - if protect_against_forgery?
+      %meta{:name => 'authenticity_token', :content => form_authenticity_token}
+    %title Daily Tasks
+    =stylesheet_link_tag 'application', :media => 'screen'
+    =javascript_include_tag 'application'
+  %body
+    #header
+      %h2=link_to 'Daily Tasks', root_url
+    #menu
+      - if logged_in?
+        Logged in as:
+        =current_user.username
+        =link_to  'Logout', logout_url
+      - else
+        =link_to 'Login', login_url
+    .flash
+      %p{:style => "color: green"}
+        =flash[:notice]
+    .container
+      =yield
+ 

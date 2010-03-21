@@ -13,3 +13,4 @@ log/*.log
 tmp/**/*
 Capfile
 features_report.html
+db/development_structure.sql

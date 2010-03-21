@@ -1,0 +1,19 @@
+%h3 Editing Task 
+
+- form_for(@task) do |f|
+  =f.error_messages
+  
+  %p
+    =f.label :name 
+    =f.text_field :name 
+    %br
+    =f.label :description
+    =f.text_field :description 
+    %br
+  
+  =f.submit 'Update'
+
+  
+=link_to 'Show', @task
+|
+=link_to 'Index', tasks_path

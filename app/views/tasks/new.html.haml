@@ -1,0 +1,14 @@
+%h3 Add a Task
+
+- form_for @task do |t|
+  =t.error_messages
+  =t.label :name
+  =t.text_field :name
+  %br
+  =t.label :description
+  =t.text_field :description
+  %br
+  =t.submit 'Add'
+  %br
+  %br
+=link_to "Back", root_url
