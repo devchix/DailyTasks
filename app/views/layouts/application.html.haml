@@ -23,6 +23,9 @@
         %br
         Logged in as:
         =current_user.username
+      - else 
+        |
+        =link_to  'Login', login_url
     .flash
       %p{:style => "color: green"}
         =flash[:notice]
