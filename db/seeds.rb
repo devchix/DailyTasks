@@ -5,3 +5,8 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
+
+first_user = User.create(:username => "testuser")
+first_user.tasks.build(:name => "walk 1 mile")
+first_user.tasks.build(:name => "wash dishes")
+first_user.tasks.build(:name => "make bed")

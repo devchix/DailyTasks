@@ -1,11 +1,9 @@
 class TasksController < ApplicationController
+  
+  before_filter :login_required
+   
   def index
     @tasks = Task.all
-    
-     respond_to do |format|
-        format.html # list.html.erb
-        format.xml  { render :xml => @tasks }
-      end
   end
   
   def show
@@ -24,7 +22,7 @@ class TasksController < ApplicationController
     @task = Task.new(params[:task])
     if @task.save
       flash[:notice] = 'Task was successfully created.'
-      redirect_to(@task) 
+      redirect_to @task
     end
   end
 
@@ -37,14 +35,11 @@ class TasksController < ApplicationController
      redirect_to @task
   end
 
-  # DELETE /posts/1
-  # DELETE /posts/1.xml
+
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    
     redirect_to(tasks_url)
-
   end
 
 end

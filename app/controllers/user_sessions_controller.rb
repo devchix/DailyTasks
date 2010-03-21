@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
     session[:user] = User.find_or_create_by_username(params[:login][:username])
     unless session[:user].blank?
       flash[:notice] = "Login successful!"
-      redirect_to root_url
+      redirect_to tasks_url
     else
       render :action => :new
     end

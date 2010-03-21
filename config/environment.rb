@@ -9,7 +9,5 @@ require File.join(File.dirname(__FILE__), 'boot')
 Rails::Initializer.run do |config|
 
   config.gem "haml"
-
-
   config.time_zone = 'UTC'
 end
