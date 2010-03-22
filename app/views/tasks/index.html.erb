@@ -1,0 +1,17 @@
+<h1>All Tasks</h1>
+<table>
+<th>Task Name </th>
+<th>Actions </th>
+<th >
+<% for task in @tasks %>
+<tr>
+<td>&nbsp;<%= link_to (h task.name), edit_task_path(task), :method => :get  %></td>
+<td>
+<%= button_to 'Delete', task, :confirm => "Are you sure you want to delete task: #{task.name} ", :method => :delete %> </td>
+</tr>
+<% end %>
+</table>
+<p>
+<%= link_to "New Task", new_task_url %>
+</p>
+ 

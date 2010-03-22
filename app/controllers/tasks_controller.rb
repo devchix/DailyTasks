@@ -44,6 +44,7 @@ class TasksController < ApplicationController
   
   def complete
     @task = Task.find(params[:id])
+    @task
     redirect_to(tasks_url)
   end
   
