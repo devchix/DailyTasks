@@ -44,7 +44,13 @@ class TasksController < ApplicationController
   
   def complete
     @task = Task.find(params[:id])
-    @task
+    @history = TaskHistory.new
+    @history.task = @task
+    if @history.save
+        flash[:notice] = "Task: #{@task.name} was successfully completed."
+    else
+      flash[:notice]="Error completing task #{@task.name}."
+    end
     redirect_to(tasks_url)
   end
   
