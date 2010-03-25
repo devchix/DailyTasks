@@ -31,8 +31,8 @@ class TasksController < ApplicationController
     
     if @task.update_attributes(params[:task])
         flash[:notice] = 'Task was successfully updated.'
-     end
-     redirect_to @task
+    end
+    redirect_to @task
   end
 
 
