@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   
   before_filter :login_required
-   
+    
   def index
     @tasks = Task.incomplete_tasks_for(current_user)
     @done = Task.done_tasks_for(current_user)
@@ -21,7 +21,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(params[:task])
-    @task.user_id=current_user
+    @task.user_id = current_user
     if @task.save
       flash[:notice] = 'Task was successfully created.'
       redirect_to @task
