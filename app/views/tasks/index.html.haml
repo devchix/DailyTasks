@@ -1,0 +1,15 @@
+
+
+.list
+  .p
+  = button_to "New Task", new_task_url 
+
+  .hr
+
+  .h1 To Do
+  = render :partial => 'todo.html.haml'
+
+  .hr
+
+  .h1 Done
+  = render :partial => 'done.html.haml' 
