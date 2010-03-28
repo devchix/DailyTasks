@@ -41,6 +41,11 @@ describe "Tasks for current user" do
     incomplete = Task.incomplete_tasks_for(@user)
     incomplete.size.should == 1
   end
-  
+
+  it "should have one task completed for today" do
+    @task1.complete
+    complete = Task.done_tasks_for(@user)
+    complete.size.should == 1
+  end
 end
 

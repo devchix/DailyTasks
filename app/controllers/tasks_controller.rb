@@ -3,7 +3,8 @@ class TasksController < ApplicationController
   before_filter :login_required
    
   def index
-    @tasks = Task.all
+    @tasks = Task.incomplete_tasks_for(current_user)
+    @done = Task.done_tasks_for(current_user)
   end
   
   def show
@@ -44,9 +45,7 @@ class TasksController < ApplicationController
   
   def complete
     @task = Task.find(params[:id])
-    @history = TaskHistory.new
-    @history.task = @task
-    if @history.save
+    if @task.complete
         flash[:notice] = "Task: #{@task.name} was successfully completed."
     else
       flash[:notice]="Error completing task #{@task.name}."
