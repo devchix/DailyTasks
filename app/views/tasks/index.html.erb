@@ -1,11 +1,25 @@
-<p>
-<%= button_to "New Task", new_task_url %>
-</p>
-<hr/>
-<h1>To Do</h1>
-<%= render :partial => 'todo.erb.html' %>
-<hr/>
-<h1>Done</h1>
-<%= render :partial => 'done.erb.html' %>
+<script type="text/javascript">
+  //$(function() {
+    // change all button, input:submit and a elemnts in .list div to jquery button
+  //  $('button, input:submit, a', '.list').button();
+  //});
+</script>
 
-  
+<div class="list">
+  <p>
+    <%= button_to "New Task", new_task_url %>
+  </p>
+
+  <hr/>
+
+  <h1>To Do</h1>
+  <%= render :partial => 'todo.html.haml'
+   %>
+
+  <hr/>
+
+  <h1>Done</h1>
+  <%= render :partial => 'done.html.haml' %>
+
+</div>
+
