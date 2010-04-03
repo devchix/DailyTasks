@@ -12,8 +12,10 @@ class ChartsController < ApplicationController
     g.data("Peaches", [9, 9, 10, 8, 7, 9])
 
     g.labels = {0 => '2003', 2 => '2004', 4 => '2005'}
+    
+    @image_name = "#{Time.now}.png"
 
-    g.write('./public/images/test_graph.png')    
+    g.write("./public/images/#{@image_name}")    
   end
   
 end
