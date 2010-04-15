@@ -1,16 +1,20 @@
+:javascript
+  $(function() {
+    // change all button, input:submit elements in .list div to jquery button
+    $('button, input:submit', '.list').button();
+  });
+
 
 
 .list
   = button_to "New Task", new_task_url 
 
   %hr
+  .grid_8
+    %h1 To Do
+    = render :partial => 'todo.html.haml'
 
-  %h1 To Do
-  
-  = render :partial => 'todo.html.haml'
+  .grid_8
 
-  %hr
-
-  %h1 Done
-  
-  = render :partial => 'done.html.haml' 
+    %h1 Done
+    = render :partial => 'done.html.haml' 

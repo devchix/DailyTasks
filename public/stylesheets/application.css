@@ -52,3 +52,35 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
+clear {
+  clear: both;
+}
+
+h2 {
+  font-size:3em;
+  padding: 1em;
+  text-align:center;
+}
+
+#menu .logged_in_as {
+  text-align: right
+}
+
+#menu {
+  background-color: #4883E2;
+  padding: 1em;
+  color:white;
+  font-weight:bold;
+  height:2em;
+}
+
+#menu a {
+  color: white;
+  font-weight: bold;
+  text-decoration:none;
+
+}
+
+#menu a:hover {
+  text-decoration: underline;
+}

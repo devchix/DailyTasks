@@ -1,15 +1,7 @@
-%table
-  %tr
-    %th
-      Task Name
-    %th
-      Actions
-    %th
 
-  - @tasks.each do |task|
-    %tr
-      %td
-        = link_to "#{h task.name}", edit_task_path(task), :method => :get
-      %td
-        = button_to 'Delete', task, :confirm => "Are you sure you want to delete task: #{task.name} ", :method => :delete
-        = button_to 'Complete', :method => :post, :action => 'complete', :controller => 'tasks', :id => task
+- @tasks.each do |task|
+  .grid_2.prefix_1
+    = link_to "#{h task.name}", edit_task_path(task), :method => :get
+  .grid_2.prefix_2
+    = button_to 'Complete', :method => :post, :action => 'complete', :controller => 'tasks', :id => task
+  .clear

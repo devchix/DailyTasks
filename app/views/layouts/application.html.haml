@@ -7,28 +7,35 @@
       %meta{:name => 'authenticity_token', :content => form_authenticity_token}
     %title
       Daily Tasks
+    = stylesheet_link_tag 'application', '960','text','reset', :media => 'screen'
+    = stylesheet_link_tag 'ui-lightness/jquery-ui-1.8.custom.css'
+    = javascript_include_tag 'jquery-1.4.2.min'
+    = javascript_include_tag 'jquery-ui-1.8.custom.min'
+
     =stylesheet_link_tag 'application', :media => 'screen'
     =javascript_include_tag 'application'
   %body
-    #header
-      %h2 Daily Tasks
-    #menu
-      =link_to "Home", root_url
-      - if logged_in?
-        |
-        =link_to "Tasks", tasks_url
-        |
-        =link_to  'Logout', logout_url
-        %br
-        %br
-        Logged in as:
-        =current_user.username
-      - else 
-        |
-        =link_to  'Login', login_url
-    .flash
-      %p{:style => "color: green"}
-        =flash[:notice]
-    .container
-      =yield
+    .container_16
+      #header
+        %h2 Daily Tasks
+      #menu
+        .grid_10.alpha
+          =link_to "Home", root_url
+          - if logged_in?
+            |
+            =link_to "Tasks", tasks_url
+            |
+            =link_to  'Logout', logout_url
+        .grid_5.omega.logged_in_as
+          - if logged_in?
+            Logged in as:&nbsp;
+            =current_user.username
+          - else 
+            |
+            =link_to  'Login', login_url
+      .flash
+        %p{:style => "color: green"}
+          =flash[:notice]
+      .container
+        =yield
  
