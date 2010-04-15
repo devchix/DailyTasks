@@ -1,0 +1,12 @@
+<% if @task %>
+History list for task : <%= @task.name %>
+
+<ul>
+<% @task.task_historys.each do |history| %>
+  <li> <%= history.completed_on %>
+<% end %>
+</ul>
+<% else %>
+<%= @message %>
+<% end %>
+
