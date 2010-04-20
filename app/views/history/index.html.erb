@@ -1,6 +1,8 @@
 <% if @task %>
 History list for task : <%= @task.name %>
 
+You completed this task <%= @count %> times in the past week!
+
 <ul>
 <% @task.task_historys.each do |history| %>
   <li> <%= history.completed_on %>
@@ -9,4 +11,6 @@ History list for task : <%= @task.name %>
 <% else %>
 <%= @message %>
 <% end %>
+
+
 
