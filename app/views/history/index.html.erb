@@ -10,7 +10,7 @@ On:
 <% end %>
 </ul>
 <% else %>
-History list for all tasks 
+History list for <%= current_user.username %>
 <p>
 You completed <%= @completions.count %> tasks in the past week!  
 </p>

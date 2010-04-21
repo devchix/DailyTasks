@@ -12,7 +12,7 @@ class HistoryController < ApplicationController
       @message = "Placeholder : put cumulative stats here!"
       
       @completions = TaskHistory.find(:all,
-         :conditions => [" task_histories.completed_on>:week_ago and tasks.user_id=:user_id",{:week_ago => (Date.today-7),:user_id => 1}],
+         :conditions => [" task_histories.completed_on>:week_ago and tasks.user_id=:user_id",{:week_ago => (Date.today-7),:user_id => current_user}],
          :joins => "inner join tasks  on tasks.id=task_histories.task_id")
      
     end
