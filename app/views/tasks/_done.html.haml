@@ -1,6 +1,7 @@
 %ul
   - @done.each do |task|
     %li
-      = task.name 
       = link_to "History", :controller => "history", :action => "index" , :method => :get, :id => task
+      = task.name 
+
      

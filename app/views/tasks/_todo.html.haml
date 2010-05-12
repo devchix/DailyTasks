@@ -1,7 +1,8 @@
 
 - @tasks.each do |task|
-  .grid_2.prefix_1
-    = link_to "#{h task.name}", edit_task_path(task), :method => :get
-  .grid_2.prefix_2
+
+  .grid_2
     = button_to 'Complete', :method => :post, :action => 'complete', :controller => 'tasks', :id => task
+  .grid_4
+    = link_to "#{h task.name}", edit_task_path(task), :method => :get
   .clear
