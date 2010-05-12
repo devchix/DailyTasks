@@ -12,7 +12,7 @@ On:
 <% else %>
 History list for <%= current_user.username %>
 <p>
-You completed <%= @completions.count %> tasks in the past week!  
+You completed <%= @completions.size %> tasks in the past week!  
 </p>
 <ul>
 <% @completions.each do |history| %>
