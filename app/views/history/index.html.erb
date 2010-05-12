@@ -1,24 +1,26 @@
 <% if @task %>
-History list for task : <%= @task.name %>
-<p>
-You completed this task <%= @completions.size %> times in the past week!  
-</p>
-On:
-<ul>
-<% @completions.each do |history| %>
-  <li> <%= history.completed_on %>
-<% end %>
-</ul>
+  History list for task : <%= @task.name %>
+  <p>
+    You completed this task <%= @completions.size %> times in the past week!  
+  </p>
+  On:
+  <ul>
+    <% @completions.each do |history| %>
+      <li> <%= history.completed_on %>
+    <% end %>
+  </ul>
+
 <% else %>
-History list for <%= current_user.username %>
-<p>
-You completed <%= @completions.size %> tasks in the past week!  
-</p>
-<ul>
-<% @completions.each do |history| %>
-  <li> <%= history.completed_on %> - <%= history.task.name%>
-<% end %>
-</ul>
+
+  History list for <%= current_user.username %>
+  <p>
+    You completed <%= @completions.size %> tasks in the past week!  
+  </p>
+  <ul>
+    <% @completions.each do |history| %>
+      <li> <%= history.completed_on %> - <%= history.task.name%>
+    <% end %>
+  </ul>
 
 <% end %>
 
