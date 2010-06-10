@@ -21,11 +21,18 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(params[:task])
-    @task.user_id = current_user
-    if @task.save
-      flash[:notice] = 'Task was successfully created.'
-      redirect_to @task
-    end
+    @task.user_id = current_user    
+    respond_to do |format|
+      if @task.save
+        flash[:notice] = 'Task was successfully created.'
+        format.html { redirect_to(@task) }
+        format.xml { render :xml => @task, :status => :created, :location => @task }
+      else
+        format.html { render :action => "new" }
+        format.xml { render :xml => @task.errors, :status => :unprocessable_entity }
+      end
+    end    
+    
   end
 
   def update
