@@ -2,7 +2,7 @@ class Task < ActiveRecord::Base
   belongs_to :user
   has_many :task_historys
 
-  validates_length_of :name, :within => 3..80, :on => :create, :message => "must be present and between 2 and 80 characters"
+  validates_length_of :name, :within => 3..80, :on => :create, :message => "must be present and between 3 and 80 characters"
   
   #named_scope :todo, lambda {{:conditions =>["last_completed_on < ?",Date.today]}}  
   

@@ -7,6 +7,17 @@ describe Task do
     @task = Task.create(:name => 'get milk', :description => "get skim milk from store")
   end
   
+  it "should require a task name between 3 and 80 characters" do
+    invalid_task = Task.new(:name => '')
+    invalid_task.should_not be_valid
+    invalid_task.should have(1).error_on(:name)
+    invalid_task = Task.new(:name => 'this is a task that is really really long, if you have a task this long it should probably be two tasks.')
+    invalid_task.should_not be_valid
+    valid_task = Task.create(:name => 'this is a nice task length')
+    valid_task.should be_valid
+    valid_task.should have(0).error_on(:name)
+  end
+  
   it "should be be marked complete for today" do
     @task.complete
     @task.task_historys[0].completed_on.should == Date.today
