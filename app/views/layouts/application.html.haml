@@ -21,20 +21,20 @@
       #menu
         .grid_10.alpha
           =link_to "Home", root_url
-          - if logged_in?
+          - if user_signed_in?
             |
             =link_to "Tasks", tasks_url
             |
             =link_to "History", history_url
             |
-            =link_to  'Logout', logout_url
+            =link_to  'Logout', destroy_user_session_url
         .grid_5.omega.logged_in_as
-          - if logged_in?
+          - if user_signed_in?
             Logged in as:&nbsp;
-            =current_user.username
+            =current_user.email
           - else 
             |
-            =link_to  'Login', login_url
+            =link_to  'Login', user_session_url
       .flash
         %p{:style => "color: green"}
           =flash[:notice]

@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   
-  before_filter :login_required
+  before_filter :authenticate_user!
+  
     
   def index
     @tasks = Task.incomplete_tasks_for(current_user)
@@ -21,7 +22,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(params[:task])
-    @task.user_id = current_user    
+    @task.user_email = current_user.email    
     respond_to do |format|
       if @task.save
         flash[:notice] = 'Task was successfully created.'

@@ -1,13 +1,15 @@
 ActionController::Routing::Routes.draw do |map|
+  map.devise_for :users
+
   map.root :controller => 'home'
   
-  map.resource :user_session
+ # map.resource :user_session
   map.resources :users
   map.resources :tasks
   map.resources :history
   
-  map.login 'login', :controller => 'user_sessions', :action => 'new'
-  map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'
+ # map.login 'login', :controller => 'sessions', :action => 'new'
+#  map.logout 'logout', :controller => 'sessions', :action => 'destroy'
   map.history 'history', :controller => 'history', :action => 'show'
     
 

@@ -1,6 +1,6 @@
 #Landing page for now
 class HomeController < ApplicationController
-  before_filter :login_required, :except => [:index]
+  before_filter :authenticate_user!, :except => [:index]
     
   def index
   end

@@ -10,4 +10,6 @@ Rails::Initializer.run do |config|
 
   config.gem "haml"
   config.time_zone = 'UTC'
+  config.gem "warden"
+  config.gem "devise", :version => "1.0.7"
 end

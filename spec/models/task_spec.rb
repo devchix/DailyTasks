@@ -37,9 +37,9 @@ end
 describe "Tasks for current user" do
   
   before(:each) do
-    @user = User.create(:id => 1, :username => 'bob')
-    @task1 = Task.create(:name => 'get milk', :description => "get skim milk from store", :user_id => 1)
-    @task2 = Task.create(:name => 'get bread', :description => "get sara lee bread from store", :user_id => 1)
+    @user = User.create(:email => 'test@email.com')
+    @task1 = Task.create(:name => 'get milk', :description => "get skim milk from store", :user_email => 'test@email.com')
+    @task2 = Task.create(:name => 'get bread', :description => "get sara lee bread from store", :user_email => 'test@email.com')
   end
   
   it "should have two tasks for today" do
