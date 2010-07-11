@@ -15,7 +15,7 @@ class Task < ActiveRecord::Base
   end
 
   def self.done_tasks_for(user)
-    Task.find_all_by_user_email_and_last_completed_on(user.email, Date.today)
+    Task.find_all_by_user_id_and_last_completed_on(user.id, Date.today)
   end
 
   def self.incomplete_tasks_for(user)
@@ -25,7 +25,7 @@ class Task < ActiveRecord::Base
     #      {:user => user.id, :on => Date.today.to_s}
     #    ])
     tasks_to_do = []
-    Task.find_all_by_user_email(user.email).each do |task|
+    Task.find_all_by_user_id(user.id).each do |task|
       if task.last_completed_on.nil? or (task.last_completed_on != Date.today)
         tasks_to_do.push task   # could also do:  tasks_to_do << task
       end
