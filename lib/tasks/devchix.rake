@@ -1,8 +1,8 @@
 namespace :devchix do
-  desc "Load development data"
+  desc "Creates a task done today and previous 3 days: TASK='task name'"
   task :data, [:task]  => :environment do |t, args|
     args.with_default(:task => 'test task') 
-    test_user = User.find_or_create_by_username("testuser")
+    test_user = User.first
     task = test_user.tasks.create(:name => args.task)
     task.complete(Date.today)
     task.complete(Date.today - 1.day)
