@@ -12,6 +12,8 @@
 
 <% else %>
 
+  <img src="<%= @graph_url %>"
+  <br/>
   History list for <%= current_user.email %>
   <p>
     You completed <%= @completions.size %> tasks in the past week!  
