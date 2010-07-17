@@ -6,8 +6,10 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.recoverable
       t.rememberable
       t.trackable
-      # t.lockable
-
+      t.lockable
+      t.timeoutable
+      t.activatable
+      
       t.timestamps
     end
 
