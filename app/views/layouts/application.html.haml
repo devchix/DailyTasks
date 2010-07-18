@@ -38,5 +38,7 @@
       .flash
         %p{:style => "color: green"}
           =flash[:notice]
+        %p{:style => "color: red"}
+          = flash[:alert] 
       .container
         =yield
