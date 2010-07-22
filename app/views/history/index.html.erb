@@ -11,8 +11,63 @@
   </ul>
 
 <% else %>
+<script type="text/javascript">
+var chart;
+$(document).ready(function() {
+  chart = new Highcharts.Chart({
+    chart: {
+      renderTo: 'task_chart',
+      defaultSeriesType: 'line',
+      marginRight: 130,
+      marginBottom: 25
+    },
+    title: {
+      text: 'This week',
+      x: -20 //center
+    },
+    subtitle: {
+      text: 'my daily tasks',
+      x: -20
+    },
+    xAxis: {
+      categories: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday','Saturday']
+    },
+    yAxis: {
+      title: {
+        text: 'count of tasks'
+      },
+      plotLines: [{
+        value: 0,
+        width: 1,
+        color: '#808080'
+      }]
+    },
+    tooltip: {
+      formatter: function() {
+                  return '<b>'+ this.series.name +'</b><br/>'+
+          this.x +': '+ this.y +' tasks';
+      }
+    },
+    legend: {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'top',
+      x: -10,
+      y: 100,
+      borderWidth: 0
+    },
+    series: [{
+      name: 'This week',
+      data: <%= TaskHistory.find_completed_for_week.inspect %>
+    }]
+  });
 
-  <img src="<%= @graph_url %>"
+
+  });
+
+    </script>
+
+  <div id="task_chart" style="width:450px height:150px"></div>
   <br/>
   History list for <%= current_user.email %>
   <p>

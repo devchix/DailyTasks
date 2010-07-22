@@ -14,20 +14,15 @@ class Task < ActiveRecord::Base
     self.update_attribute('last_completed_on', complete_date)
   end
 
-  def self.done_tasks_for(user)
-    Task.find_all_by_user_id_and_last_completed_on(user.id, Date.today)
+  def self.done_tasks_for(user_id)
+    Task.find_all_by_user_id_and_last_completed_on(user_id, Date.today)
   end
 
-  def self.incomplete_tasks_for(user)
-    #tried something like this, but didn't work
-    #Task.find(:all, :conditions => 
-    #    ['user_id = :user and last_completed_on != :on', 
-    #      {:user => user.id, :on => Date.today.to_s}
-    #    ])
+  def self.incomplete_tasks_for(user_id)
     tasks_to_do = []
-    Task.find_all_by_user_id(user.id).each do |task|
-      if task.last_completed_on.nil? or (task.last_completed_on != Date.today)
-        tasks_to_do.push task   # could also do:  tasks_to_do << task
+    Task.find_all_by_user_id(user_id).each do |task|
+      if task.last_completed_on.blank? or (task.last_completed_on != Date.today)
+        tasks_to_do << task
       end
     end
     tasks_to_do

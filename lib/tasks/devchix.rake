@@ -4,7 +4,7 @@ namespace :devchix do
     args.with_default(:task => 'test task') 
     test_user = User.first
     task = test_user.tasks.create(:name => args.task)
-    task.complete(Date.today)
+    task.complete() #default does today
     task.complete(Date.today - 1.day)
     task.complete(Date.today - 2.day)
     task.complete(Date.today - 3.day)
