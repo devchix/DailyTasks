@@ -1,3 +1,4 @@
+addresses.txt
 /config/database.yml
 /coverage
 /db/*.sqlite3
