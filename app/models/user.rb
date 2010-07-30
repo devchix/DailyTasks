@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   
    has_many :tasks
    def validate_on_create
-        valid_addresses = [ "somerset@gmail.com", "rebecca.gutterman@gmail.com", "mrnicksgirl@gmail.com", "beverly@beverlynelson.net"]
-        if valid_addresses.include? email
+        existing_address = WhitelistEntry.find_by_email(email)
+        if existing_address 
         else
           message =  email+" not in whitelist, application is restricted to approved users during beta."
           errors.add("email ",message)
