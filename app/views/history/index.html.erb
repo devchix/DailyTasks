@@ -60,7 +60,7 @@ $(document).ready(function() {
     },
     series: [{
       name: 'This week',
-      data: <%= TaskHistory.find_completed_for_week.inspect %>
+      data: <%= TaskHistory.find_completed_for_week(current_user[:id]).inspect %>
     }]
   });
 

@@ -8,9 +8,8 @@
     %title
       Daily Tasks
     
-    = stylesheet_link_tag 'application', '960','text','reset', :media => 'screen'
+    = stylesheet_link_tag '960','text','reset', 'application', :media => 'screen'
     = stylesheet_link_tag 'ui-lightness/jquery-ui-1.8.custom.css'
-    = stylesheet_link_tag 'application', :media => 'screen'
     
     = javascript_include_tag 'jquery-1.4.2.min'
     = javascript_include_tag 'jquery-ui-1.8.custom.min'
@@ -43,5 +42,5 @@
           =flash[:notice]
         %p{:style => "color: red"}
           = flash[:alert] 
-      .container
+      #main
         =yield

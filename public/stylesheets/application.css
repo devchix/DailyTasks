@@ -1,4 +1,5 @@
-body { background-color: #fff; color: #333; }
+body { background-color: #4085FF; color: #333; }
+
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -52,10 +53,6 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
-clear {
-  clear: both;
-}
-
 h2 {
   font-size:3em;
   padding: 1em;
@@ -72,6 +69,9 @@ h2 {
   color:white;
   font-weight:bold;
   height:2em;
+  border: 3px sold #93680E;
+  border-top: 2px solid #0D4AB2;
+  border-bottom: 5px solid #0D4AB2;
 }
 
 #menu a {
@@ -82,5 +82,36 @@ h2 {
 }
 
 #menu a:hover {
+  background-color:inherit;
   text-decoration: underline;
+}
+
+#header {
+  background-color: #FFBF38;
+
+}
+
+
+#main {
+  background-color: #FFBF38;
+  padding:15px;
+  /*border: 4px solid #93680E;*/
+}
+
+#main h2 {
+  color: #93680E;
+  font-size:2em;
+  text-align: left;
+  display:block;
+  margin: 0;
+  padding: 5px 0px;
+  clear: both;
+}
+
+#main label {
+  padding-top:5px;
+}
+
+.clear  {
+  clear: both;
 }
