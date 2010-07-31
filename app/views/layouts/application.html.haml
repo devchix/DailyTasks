@@ -17,30 +17,36 @@
 
     =javascript_include_tag 'application'
   %body
-    .container_16
-      #header
-        %h2 Daily Tasks
-      #menu
-        .grid_10.alpha
-          =link_to "Home", root_url
-          - if user_signed_in?
-            |
-            =link_to "Tasks", tasks_url
-            |
-            =link_to "History", history_url
-            |
-            =link_to  'Logout', destroy_user_session_url
-        .grid_5.omega.logged_in_as
-          - if user_signed_in?
-            Logged in as:&nbsp;
-            =current_user.email
-          - else 
-            |
-            =link_to  'Login', user_session_url
-      .flash
-        %p{:style => "color: green"}
-          =flash[:notice]
-        %p{:style => "color: red"}
-          = flash[:alert] 
-      #main
+    #header
+      .container_16.clearfix
+        #headline
+          %h2 Daily Tasks
+        #menu
+          .grid_10.alpha
+            =link_to "Home", root_url
+            - if user_signed_in?
+              |
+              =link_to "Tasks", tasks_url
+              |
+              =link_to "History", history_url
+              |
+              =link_to  'Logout', destroy_user_session_url
+          .grid_5.omega.logged_in_as
+            - if user_signed_in?
+              Logged in as:&nbsp;
+              =current_user.email
+            - else 
+              |
+              =link_to  'Login', user_session_url
+          .flash.grid_16
+            %p{:style => "color: green"}
+              =flash[:notice]
+            %p{:style => "color: red"}
+              = flash[:alert] 
+    #main
+      #content.container_16.clearfix
         =yield
+    #footer
+      #footer_content.container_16
+        %p
+          A DevChix Project for learning and collaboration &copy;DevChix 2010
