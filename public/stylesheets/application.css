@@ -1,5 +1,8 @@
 body { background-color: #4085FF; color: #333; }
 
+.flash {
+  background-color: #FFBF38; 
+}
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
