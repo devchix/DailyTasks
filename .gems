@@ -1,4 +1,5 @@
+rails --version '2.3.5'
 haml
 warden
-devise --version => '1.0.7'
+devise --version '1.0.7'
 jrails
