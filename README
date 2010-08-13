@@ -2,8 +2,5 @@ Daily Tasks
 
 This is a beginning rails project used for practice by the DevChix group
 
-Plugins used:
-* Google Charts On Rails: http://code.google.com/p/google-charts-on-rails/
-
 The seed script expects a plain text file called addresses.txt in the root directory.  It should have a list of email addresses (one per line).  This file is not checked in for privacy.  
 
