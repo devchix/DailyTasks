@@ -13,6 +13,7 @@
 File.open("addresses.txt", "r") do |infile|
   while (line = infile.gets)
        if(line)
+         line.strip! 
        #puts "#{line}"
        WhitelistEntry.create(:email=>line)
      end
