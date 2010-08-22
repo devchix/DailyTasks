@@ -9,6 +9,10 @@ class TasksController < ApplicationController
   end
 
   def show
+    if @task.blank?
+      flash[:notice] = "You either didn't create task id #{params[:id]} or it doesn't exist"
+      redirect_to tasks_path 
+    end
   end
 
   def new
