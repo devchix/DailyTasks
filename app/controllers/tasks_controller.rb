@@ -23,8 +23,8 @@ class TasksController < ApplicationController
     @task.user_id = current_user.id    
     respond_to do |format|
       if @task.save
-        flash[:notice] = 'Task was successfully created.'
-        format.html { redirect_to(@task) }
+        flash[:notice] = 'Task was successfully created. Add another!'
+        format.html { redirect_to(new_task_path) }
         format.xml { render :xml => @task, :status => :created, :location => @task }
       else
         format.html { render :action => "new" }
