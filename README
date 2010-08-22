@@ -4,3 +4,8 @@ This is a beginning rails project used for practice by the DevChix group
 
 The seed script expects a plain text file called addresses.txt in the root directory.  It should have a list of email addresses (one per line).  This file is not checked in for privacy.  
 
+
+For ease in development, we made a rake task to add a task and complete it for today and previous 4 days
+
+rake devchix:data TASK="exercise 20 mins"
+

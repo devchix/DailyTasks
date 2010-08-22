@@ -4,5 +4,5 @@
   .grid_2
     = button_to 'Complete', :method => :post, :action => 'complete', :controller => 'tasks', :id => task
   .grid_4
-    = link_to "#{h task.name}", edit_task_path(task), :method => :get
+    = link_to "#{h task.name}", task_path(task), :method => :get
   .clear

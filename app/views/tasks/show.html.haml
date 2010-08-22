@@ -8,6 +8,7 @@
   =h @task.description
 
 = button_to 'Delete', @task, :confirm => "Are you sure you want to delete task: #{@task.name} ", :method => :delete
-
+= link_to 'Edit', edit_task_path(@task)
+%br
 =link_to "Task List", tasks_url
 
