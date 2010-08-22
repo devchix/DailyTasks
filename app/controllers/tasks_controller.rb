@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
 
   before_filter :authenticate_user!
+  before_filter :find_my_task, :except => [:new, :update]
 
   def index
     @tasks = Task.incomplete_tasks_for(current_user.id)
@@ -8,7 +9,6 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id])
   end
 
   def new
@@ -16,7 +16,6 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:id])
   end
 
   def create
@@ -35,7 +34,6 @@ class TasksController < ApplicationController
   end
 
   def update
-    @task = Task.find(params[:id])
 
     if @task.update_attributes(params[:task])
       flash[:notice] = 'Task was successfully updated.'
@@ -44,13 +42,11 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find(params[:id])
     @task.destroy
     redirect_to(tasks_url)
   end
 
   def complete
-    @task = Task.find(params[:id])
     if @task.complete
       flash[:notice] = "Task: #{@task.name} was successfully completed."
     else
@@ -59,4 +55,8 @@ class TasksController < ApplicationController
     redirect_to(tasks_url)
   end
 
+  private
+  def find_my_task
+    @task = Task.find_by_user_id_and_id(current_user[:id], params[:id])
+  end
 end
